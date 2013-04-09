@@ -1,0 +1,20 @@
+// mixins
+.border-radius (@radius) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+.box-shadow (@arg){
+    -moz-box-shadow: @arg;
+    -webkit-box-shadow: @arg;
+    box-shadow: @arg;
+}
+.data-uri (@mimetype, @encoded-image) {
+  background-image: url('data:@{mimetype};base64,@{encoded-image}');
+}
+.rotate (@deg) {
+  -webkit-transform: rotate(@deg);
+  -moz-transform: rotate(@deg);
+  -ms-transform: rotate(@deg);
+  -o-transform: rotate(@deg);
+}

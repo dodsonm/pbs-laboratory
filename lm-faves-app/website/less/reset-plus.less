@@ -1,0 +1,25 @@
+// Extending Normalize
+// Note: always include Boostrap mixins first in the properties list;
+body.default {
+	ul {
+		margin: 0;
+		padding: 0;
+	}
+	i {
+		font-style: normal;
+	}
+	form {
+		margin: 0;
+	}
+
+	input[type='text'], input[type='submit'], textarea {
+		.border-radius(2px);
+		margin: 0;
+	}
+
+	button {
+		.btn;
+		.pbslm-btn;
+		.border-radius(2px);
+	}
+}

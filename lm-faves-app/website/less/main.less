@@ -1,0 +1,260 @@
+// Bootstrap
+@import '../jam/bootstrap/less/bootstrap.less';
+@import '../jam/bootstrap/less/layouts.less';
+@import '../jam/bootstrap/less/grid.less';
+@import '../jam/bootstrap/less/responsive.less';
+
+//PBS
+@import 'colors.less';
+@import 'variables.less';
+@import 'mixins.less';
+@import 'button-ext.less';
+@import 'reset-plus.less';
+@import 'ui.less';
+
+//page-specific
+@import 'faves.less';
+
+//MOVE INTO FAVES.LESS
+body {
+	background-color: #ececec;
+}
+
+.wrapper {
+	.box-shadow(1px 0 25px 0px rgba(125, 125, 125, .5));
+	.container-fixed();
+	background-color: #ececec;
+	width: @gridRowWidth;
+
+	header {
+		background-color: @header-bgcolor;
+
+		.banner {
+			figure {
+				background-image: @banner-image;
+				background-position: center;
+				background-size: cover;
+				padding-top: @banner-image-ratio;
+			}
+		}
+
+		nav {
+			.clearfix();
+			background-color: @nav-bgcolor;
+			color: white;
+			padding: 10px 0;
+
+			.search {
+				float: left;
+				margin: 0 15px;
+				width: 400px;
+
+				button {
+					i {
+						.icon-white;
+						.icon-search;
+					}
+				}
+
+			}
+
+			ul {
+				float: right;
+				margin: 0;
+				padding: 0;
+
+				li {
+					float: left;
+					margin: 0 15px;
+
+					a, button {
+						color: @nav-linkcolor;
+						font-weight: bold;
+					}
+
+					a {
+						display: inline-block;
+						padding-top: 5px;
+					}
+				}
+			}
+		}
+	}
+
+	.main {
+		.makeRow();
+		padding-bottom: 5px;
+		padding-top: 5px;
+
+		article {
+			.makeColumn(8);
+			//background-color: #efefef;
+			min-height: 300px;
+
+			ul.favorites {
+				list-style: none;
+				width: 100%;
+
+				li {
+					.clearfix();
+					.makeRow();
+					background: #fff;
+					border: solid 1px #ccc;
+					margin: 5px 5px 5px 0;
+					padding: 0;
+					position: relative;
+
+					&:first-child {
+						margin-top: 0;
+					};
+
+					.handle {
+						background: #ececec;
+						background-image: url('../img/ui/handle.png');
+						background-position: center;
+						background-repeat: no-repeat;
+						border: solid 1px #ccc;
+						bottom: -1px;
+						cursor: move;
+						display: inline-block;
+						left: -1px;
+						height: 158px;
+						position: absolute;
+						width: 19px;
+					}
+					.delete {
+						.border-radius(0);
+						border-color: #ccc;
+						left: 4px;
+						margin: 0;
+						position: absolute;
+						top: 4px;
+					}
+					.detail {
+						.makeColumn(4);
+						width: 200px;
+
+						.illo {
+							background-image: url('../img/_fpo/video.png');
+							height: 90px;
+							margin: 20px;
+							position: relative;
+							width: 160px;
+
+							figcaption {
+								background: #333;
+								bottom: -20px;
+								color: #fff;
+								font-size: .75em;
+								position: absolute;
+								width: 100%;
+							}
+						}
+						.meta {
+							color: #666;
+							font-size: 0.75rem;
+							position: absolute;
+							top: 20px;
+							left: 210px;
+							width: 170px;
+
+							a {
+								font-size: 1rem;
+							}
+						}
+					}
+					.notes {
+						.makeColumn(3);
+						.pull-right;
+						border-left: solid 1px #ccc;
+						font-size: 0.75em;
+						min-height: 180px;
+
+						h2, p {
+							padding: 0 10px;
+						}
+
+						h2 {
+							background-color: #ececec;
+							color: #666;
+							font-size: inherit;
+							line-height: 30px;
+							margin: 0;
+						}
+					}
+				}
+			}
+		}
+		aside {
+			.makeColumn(4);
+
+			section {
+				background: white;
+				border: solid 1px #ccc;
+				font-size: 14px;
+				margin: 0 5px;
+
+				h2, h3, li {
+					padding: 0 10px;
+				}
+
+				h2 {
+					background: #ececec;
+					color: #666;
+					font-size: 0.9em;
+					line-height: 2em;
+					margin: 0;
+				}
+
+				.accordion {
+					margin-bottom: -1px;
+					h3 {
+						//border-bottom: solid 1px #ccc;
+						border-top: solid 1px #ececec;
+						color: @orange;
+						cursor: pointer;
+						font-size: 1em;
+						font-weight: normal;
+						line-height: 2em;
+						margin: 0;
+						outline: none;
+						//position: relative;
+						//top: -1px;
+
+						span {
+							color: #666;
+							font-size: 0.8em;
+						}
+
+						&:first-child {
+							//top: 0px;
+						};
+
+						& + div {
+							background-color: #fafafa;
+							border-top: solid 1px #ececec;
+
+						}
+					}
+
+					ul {
+						padding: 0.5em;
+						li {
+							font-size: 0.9em;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	footer {
+		background-color: @footer-bgcolor;
+		color: @footer-textcolor;
+		font-size: 0.8em;
+		padding: 20px 15px;
+	}
+
+}
+
+
