@@ -1,0 +1,59 @@
+// Extending Twitter's semantic grid mixins from Bootstrap
+// Centered container element
+.responsive-wrapper-fixed() {
+	.container-fixed();
+	width: @gridRowWidth;
+
+	/* Large desktop */
+	@media (min-width: 1200px) {
+		width: @gridRowWidth1200;
+	}
+	/* Portrait tablet to landscape and desktop */
+	@media (min-width: 768px) and (max-width: 979px) {
+		width: @gridRowWidth768;
+	}
+}
+
+.makeRow() {
+	.clearfix();
+	margin-left: @gridGutterWidth * -1;
+
+	/* Large desktop */
+	@media (min-width: 1200px) {
+		margin-left: @gridGutterWidth1200 * -1;
+	}
+	/* Portrait tablet to landscape and desktop */
+	@media (min-width: 768px) and (max-width: 979px) {
+		margin-left: @gridGutterWidth768 * -1;
+	}
+
+}
+.makeColumn(@columns: 1, @offset: 0) {
+	float: left;
+	margin-left: (@gridColumnWidth * @offset) + (@gridGutterWidth * (@offset - 1)) + (@gridGutterWidth * 2);
+	width: (@gridColumnWidth * @columns) + (@gridGutterWidth * (@columns - 1));
+
+	/* Large desktop */
+	@media (min-width: 1200px) {
+		margin-left: (@gridColumnWidth1200 * @offset) + (@gridGutterWidth1200 * (@offset - 1)) + (@gridGutterWidth1200 * 2);
+		width: (@gridColumnWidth1200 * @columns) + (@gridGutterWidth1200 * (@columns - 1));
+	}
+	/* Portrait tablet to landscape and desktop */
+	@media (min-width: 768px) and (max-width: 979px) {
+		margin-left: (@gridColumnWidth768 * @offset) + (@gridGutterWidth768 * (@offset - 1)) + (@gridGutterWidth768 * 2);
+		width: (@gridColumnWidth768 * @columns) + (@gridGutterWidth768 * (@columns - 1));
+	}
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {
+}
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+}
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+}
+/* Landscape phones and down */
+@media (max-width: 480px) {
+}
