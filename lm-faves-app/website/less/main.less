@@ -10,6 +10,7 @@
 @import 'mixins.less';
 @import 'button-ext.less';
 @import 'reset-plus.less';
+@import 'responsive-grid.less';
 @import 'ui.less';
 
 //page-specific
@@ -22,9 +23,9 @@ body {
 
 .wrapper {
 	.box-shadow(1px 0 25px 0px rgba(125, 125, 125, .5));
-	.container-fixed();
+	.responsive-wrapper-fixed();
+
 	background-color: #ececec;
-	width: @gridRowWidth;
 
 	header {
 		background-color: @header-bgcolor;
@@ -96,79 +97,90 @@ body {
 				width: 100%;
 
 				li {
-					.clearfix();
 					.makeRow();
 					background: #fff;
-					border: solid 1px #ccc;
-					margin: 5px 5px 5px 0;
-					padding: 0;
 					position: relative;
+					margin-top: 10px;
+					margin-bottom: 10px;
 
 					&:first-child {
 						margin-top: 0;
 					};
 
-					.handle {
-						background: #ececec;
-						background-image: url('../img/ui/handle.png');
-						background-position: center;
-						background-repeat: no-repeat;
-						border: solid 1px #ccc;
-						bottom: -1px;
-						cursor: move;
-						display: inline-block;
-						left: -1px;
-						height: 158px;
-						position: absolute;
-						width: 19px;
-					}
-					.delete {
-						.border-radius(0);
-						border-color: #ccc;
-						left: 4px;
-						margin: 0;
-						position: absolute;
-						top: 4px;
-					}
 					.detail {
-						.makeColumn(4);
-						width: 200px;
+						.makeColumn(5);
+min-height: 180px;
+//background: olive;
 
-						.illo {
-							background-image: url('../img/_fpo/video.png');
-							height: 90px;
-							margin: 20px;
-							position: relative;
-							width: 160px;
+						.data {
+							margin-top: 10px;
+							.media {
+								float: left;
 
-							figcaption {
-								background: #333;
-								bottom: -20px;
-								color: #fff;
-								font-size: .75em;
-								position: absolute;
-								width: 100%;
+								.handle {
+									background: #ececec;
+									background-image: url('../img/ui/handle.png');
+									background-position: center;
+									background-repeat: no-repeat;
+									border: solid 1px #ccc;
+									bottom: -1px;
+									cursor: move;
+									display: inline-block;
+									left: -1px;
+									height: 158px;
+									position: absolute;
+									width: 19px;
+								}
+								.delete {
+									.border-radius(0);
+									border-color: #ccc;
+									left: 4px;
+									margin: 0;
+									position: absolute;
+									top: 4px;
+								}
+								.illo {
+									background-image: url('../img/_fpo/video.png');
+									background-size: cover;
+									height: 90px;
+									position: relative;
+									width: 160px;
+margin-left: 5px;
+
+									/* Large desktop */
+									@media (min-width: 1200px) {
+										height: 119px;
+										width: 212px;
+									}
+
+									figcaption {
+										background: #333;
+										bottom: -20px;
+										color: #fff;
+										font-size: .75em;
+										position: absolute;
+										width: 100%;
+									}
+								}
+							}
+							.meta {
+								color: #666;
+								float: left;
+								font-size: 0.75rem;
+								margin-left: 5px;
+
+								a {
+									font-size: 1rem;
+								}
 							}
 						}
-						.meta {
-							color: #666;
-							font-size: 0.75rem;
-							position: absolute;
-							top: 20px;
-							left: 210px;
-							width: 170px;
-
-							a {
-								font-size: 1rem;
-							}
+						.tools {
 						}
+
 					}
 					.notes {
 						.makeColumn(3);
-						.pull-right;
-						border-left: solid 1px #ccc;
 						font-size: 0.75em;
-						min-height: 180px;
 
 						h2, p {
 							padding: 0 10px;
