@@ -1,0 +1,94 @@
+//Bootstrap
+@import "bootstrap/layouts.less";
+@import "bootstrap/grid.less";
+@import "bootstrap/responsive.less";
+
+//PBS-LM
+@import "reset.less";
+@import "utils.less";
+
+body {
+	background-color: #efefef;
+	font-family: tahoma, sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+body.search {
+	.main-wrapper {
+		.container-fixed();
+
+		@media (min)
+	}
+	.main {
+.makeRow();
+//margin: 15px auto;
+
+		aside {
+			//.makeColumn(4);
+			background: white;
+
+			section.facet {
+.makeColumn(3);
+//border: solid 1px #ccc;
+
+				header {
+					h2 {
+						background: #666;
+						color: white;
+//padding: 10px 5px;
+					}
+				}
+				div {
+					.clearfix();
+//padding: 10px;
+
+					ul {
+						float: left;
+						width: 33%;
+
+						li {
+							color: #666;
+							font-size: .8em;
+//margin: 3px;
+						}
+					}
+
+				}
+			}
+		}
+
+		article {
+.makeColumn(9);
+			background: ghostwhite;
+
+			&.results {
+
+				ul{
+					.makeRow();
+
+					li {
+						.makeColumn(3);
+
+						figure {
+							border: solid 1px #ccc;
+							min-height: 100px;
+
+							figcaption {
+								background: #333;
+								color: white;
+								font-size: .8em;
+								height: 20px;
+							}
+							img {
+								width: 100%;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
