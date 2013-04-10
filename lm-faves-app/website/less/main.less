@@ -2,7 +2,6 @@
 @import '../jam/bootstrap/less/bootstrap.less';
 @import '../jam/bootstrap/less/layouts.less';
 @import '../jam/bootstrap/less/grid.less';
-@import '../jam/bootstrap/less/responsive.less';
 
 //PBS
 @import 'colors.less';
@@ -12,6 +11,7 @@
 @import 'reset-plus.less';
 @import 'responsive-grid.less';
 @import 'ui.less';
+@import 'global.less';
 
 //page-specific
 @import 'faves.less';
@@ -21,252 +21,182 @@ body {
 	background-color: #ececec;
 }
 
-.wrapper {
-	.box-shadow(1px 0 25px 0px rgba(125, 125, 125, .5));
-	.responsive-wrapper-fixed();
+ul.favorites {
+	list-style: none;
+	width: 100%;
 
-	background-color: #ececec;
+	li {
+		.clearfix();
+		background: #fff;
+		position: relative;
+		margin-top: 10px;
+		margin-bottom: 10px;
 
-	header {
-		background-color: @header-bgcolor;
+		&:first-child {
+			margin-top: 0;
+		};
 
-		.banner {
-			figure {
-				background-image: @banner-image;
-				background-position: center;
-				background-size: cover;
-				padding-top: @banner-image-ratio;
-			}
-		}
-
-		nav {
-			.clearfix();
-			background-color: @nav-bgcolor;
-			color: white;
-			padding: 10px 0;
-
-			.search {
-				float: left;
-				margin: 0 15px;
-				width: 400px;
-
-				button {
-					i {
-						.icon-white;
-						.icon-search;
-					}
-				}
-
-			}
-
-			ul {
-				float: right;
-				margin: 0;
-				padding: 0;
-
-				li {
-					float: left;
-					margin: 0 15px;
-
-					a, button {
-						color: @nav-linkcolor;
-						font-weight: bold;
-					}
-
-					a {
-						display: inline-block;
-						padding-top: 5px;
-					}
-				}
-			}
-		}
-	}
-
-	.main {
-		.makeRow();
-		padding-bottom: 5px;
-		padding-top: 5px;
-
-		article {
-			.makeColumn(8);
-			//background-color: #efefef;
-			min-height: 300px;
-
-			ul.favorites {
-				list-style: none;
-				width: 100%;
-
-				li {
-					.makeRow();
-					background: #fff;
-					position: relative;
-					margin-top: 10px;
-					margin-bottom: 10px;
-
-					&:first-child {
-						margin-top: 0;
-					};
-
-					.detail {
-						.makeColumn(5);
+		.detail {
 min-height: 180px;
-//background: olive;
+//background: beige;
+			float: left;
+			width: 65%;
 
-						.data {
-							margin-top: 10px;
-							.media {
-								float: left;
-
-								.handle {
-									background: #ececec;
-									background-image: url('../img/ui/handle.png');
-									background-position: center;
-									background-repeat: no-repeat;
-									border: solid 1px #ccc;
-									bottom: -1px;
-									cursor: move;
-									display: inline-block;
-									left: -1px;
-									height: 158px;
-									position: absolute;
-									width: 19px;
-								}
-								.delete {
-									.border-radius(0);
-									border-color: #ccc;
-									left: 4px;
-									margin: 0;
-									position: absolute;
-									top: 4px;
-								}
-								.illo {
-									background-image: url('../img/_fpo/video.png');
-									background-size: cover;
-									height: 90px;
-									position: relative;
-									width: 160px;
-margin-left: 5px;
-
-									/* Large desktop */
-									@media (min-width: 1200px) {
-										height: 119px;
-										width: 212px;
-									}
-
-									figcaption {
-										background: #333;
-										bottom: -20px;
-										color: #fff;
-										font-size: .75em;
-										position: absolute;
-										width: 100%;
-									}
-								}
-							}
-							.meta {
-								color: #666;
-								float: left;
-								font-size: 0.75rem;
-								margin-left: 5px;
-
-								a {
-									font-size: 1rem;
-								}
-							}
-						}
-						.tools {
-						}
-
-					}
-					.notes {
-						.makeColumn(3);
-						font-size: 0.75em;
-
-						h2, p {
-							padding: 0 10px;
-						}
-
-						h2 {
-							background-color: #ececec;
-							color: #666;
-							font-size: inherit;
-							line-height: 30px;
-							margin: 0;
-						}
-					}
-				}
+			/* Portrait tablet to landscape and desktop */
+			@media (min-width: 768px) and (max-width: 979px) {
+				.clearFloat;
 			}
-		}
-		aside {
-			.makeColumn(4);
+			/* Landscape phone to portrait tablet */
+			@media (max-width: 767px) {
+				.clearFloat;
+			}
+			/* Landscape phones and down */
+			@media (max-width: 480px) {
+				.clearFloat;
+			}
 
-			section {
-				background: white;
-				border: solid 1px #ccc;
-				font-size: 14px;
-				margin: 0 5px;
+			.data {
+				.clearfix();
+				padding-bottom: 10px;
+				margin-top: 10px;
+				padding-left: 20px;
+				border-bottom: solid 1px #ececec;
+				.media {
+					float: left;
 
-				h2, h3, li {
-					padding: 0 10px;
-				}
-
-				h2 {
-					background: #ececec;
-					color: #666;
-					font-size: 0.9em;
-					line-height: 2em;
-					margin: 0;
-				}
-
-				.accordion {
-					margin-bottom: -1px;
-					h3 {
-						//border-bottom: solid 1px #ccc;
-						border-top: solid 1px #ececec;
-						color: @orange;
-						cursor: pointer;
-						font-size: 1em;
-						font-weight: normal;
-						line-height: 2em;
+					.handle {
+						background: #ececec;
+						background-image: url('../img/ui/handle.png');
+						background-position: center;
+						background-repeat: no-repeat;
+						border: solid 1px #ccc;
+						cursor: move;
+						display: inline-block;
+						left: -1px;
+						height: 158px;
+						position: absolute;
+						top: 21px;
+						width: 19px;
+					}
+					.delete {
+						.border-radius(0);
+						border-color: #ccc;
+						left: 4px;
 						margin: 0;
-						outline: none;
-						//position: relative;
-						//top: -1px;
-
-						span {
-							color: #666;
-							font-size: 0.8em;
-						}
-
-						&:first-child {
-							//top: 0px;
-						};
-
-						& + div {
-							background-color: #fafafa;
-							border-top: solid 1px #ececec;
-
-						}
+						position: absolute;
+						top: 4px;
 					}
+					.illo {
+						background-image: url('../img/_fpo/video.png');
+						background-size: cover;
+						height: 112px;
+						position: relative;
+						width: 200px;
+						margin-left: 5px;
 
-					ul {
-						padding: 0.5em;
-						li {
-							font-size: 0.9em;
+						figcaption {
+							background: #333;
+							bottom: -20px;
+							color: #fff;
+							font-size: .75em;
+							position: absolute;
+							width: 100%;
 						}
 					}
 				}
-			}
-		}
-	}
-
-	footer {
-		background-color: @footer-bgcolor;
-		color: @footer-textcolor;
-		font-size: 0.8em;
-		padding: 20px 15px;
-	}
-
+				.meta {
+					color: #666;
+					float: left;
+					font-size: 0.75rem;
+					margin-left: 5px;
+					width: 150px;
+/* Large desktop */
+@media (min-width: 1200px) {
+	width: 250px;
 }
 
+					a {
+						font-size: 1rem;
+					}
+				}
+			}
+			.tools {
+				min-height: 40px;
+			}
+		}
+		.notes {
+			font-size: 0.75em;
+			float: left;
+			width:  35%;
+			/* Portrait tablet to landscape and desktop */
+			@media (min-width: 768px) and (max-width: 979px) {
+				.clearFloat;
+			}
+			/* Landscape phone to portrait tablet */
+			@media (max-width: 767px) {
+				.clearFloat;
+			}
+ 			/* Landscape phones and down */
+			@media (max-width: 480px) {
+				.clearFloat;
+			}
+//background: tan;
+//min-height: 180px;
 
+			h2, p {
+				padding: 0 10px;
+			}
+
+			p {
+				border-left: solid 1px #ececec;
+			}
+
+			h2 {
+				background-color: #e0e0e0;
+				color: #666;
+				font-size: inherit;
+				line-height: 30px;
+				margin: 0;
+			}
+		}
+	}
+}
+
+.accordion {
+	margin-bottom: -1px;
+	h3 {
+		//border-bottom: solid 1px #ccc;
+		border-top: solid 1px #ececec;
+		color: @orange;
+		cursor: pointer;
+		font-size: 1em;
+		font-weight: normal;
+		line-height: 2em;
+		margin: 0;
+		outline: none;
+		//position: relative;
+		//top: -1px;
+
+		span {
+			color: #666;
+			font-size: 0.8em;
+		}
+
+		&:first-child {
+			//top: 0px;
+		};
+
+		& + div {
+			background-color: #fafafa;
+			border-top: solid 1px #ececec;
+
+		}
+	}
+
+	ul {
+		padding: 0.5em;
+		li {
+			font-size: 0.9em;
+		}
+	}
+}

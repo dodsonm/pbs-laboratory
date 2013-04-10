@@ -12,6 +12,14 @@
 	@media (min-width: 768px) and (max-width: 979px) {
 		width: @gridRowWidth768;
 	}
+	/* Landscape phone to portrait tablet */
+	@media (max-width: 767px) {
+		width: auto;
+	}
+	/* Landscape phones and down */
+	@media (max-width: 480px) {
+		width: auto;
+	}
 }
 
 .makeRow() {
@@ -26,7 +34,14 @@
 	@media (min-width: 768px) and (max-width: 979px) {
 		margin-left: @gridGutterWidth768 * -1;
 	}
-
+	/* Landscape phone to portrait tablet */
+	@media (max-width: 767px) {
+		margin-left: 0;
+	}
+	/* Landscape phones and down */
+	@media (max-width: 480px) {
+		margin-left: 0;
+	}
 }
 .makeColumn(@columns: 1, @offset: 0) {
 	float: left;
@@ -42,6 +57,16 @@
 	@media (min-width: 768px) and (max-width: 979px) {
 		margin-left: (@gridColumnWidth768 * @offset) + (@gridGutterWidth768 * (@offset - 1)) + (@gridGutterWidth768 * 2);
 		width: (@gridColumnWidth768 * @columns) + (@gridGutterWidth768 * (@columns - 1));
+	}
+	/* Landscape phone to portrait tablet */
+	@media (max-width: 767px) {
+		margin-left: 0;
+		width: 100%;
+	}
+	/* Landscape phones and down */
+	@media (max-width: 480px) {
+		margin-left: 0;
+		width: 100%;
 	}
 }
 
