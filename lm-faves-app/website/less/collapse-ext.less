@@ -1,0 +1,27 @@
+// Extensions to and overrides of Bootstrap accordion
+.accordion-group {
+	border: none;
+	.border-radius(0);
+}
+.accordion-toggle {
+
+	.accordion-heading & {
+		margin-left: -15px;
+		padding: 0;
+	}
+
+	.arrow {
+		.ico-arrow-darkgray;
+		.rotate(90deg);
+		background-size: cover;
+		display: inline-block;
+		height: 12px;
+		margin-right: 2px;
+		width: 12px;
+	}
+	&.collapsed {
+		.arrow {
+			.rotate(0deg);
+		}
+	}
+}

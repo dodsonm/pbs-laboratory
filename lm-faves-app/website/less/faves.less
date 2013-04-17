@@ -1,0 +1,303 @@
+//main list
+ul.favorites {
+	list-style: none;
+	width: 100%;
+
+	li {
+		.clearfix();
+		background: #fff;
+		position: relative;
+		margin-top: 10px;
+		margin-bottom: 10px;
+
+		&:first-child {
+			margin-top: 0;
+		};
+
+		.detail {
+			min-height: 180px;
+			//background: beige;
+			float: left;
+			width: 65%;
+
+			/* Portrait tablet to landscape and desktop */
+			@media (min-width: 768px) and (max-width: 979px) {
+				.clearFloat;
+			}
+			/* Landscape phone to portrait tablet */
+			@media (max-width: 767px) {
+				.clearFloat;
+			}
+			/* Landscape phones and down */
+			@media (max-width: 480px) {
+				.clearFloat;
+			}
+
+			.data {
+				.clearfix();
+				padding-bottom: 10px;
+				margin-top: 10px;
+				padding-left: 20px;
+				border-bottom: solid 1px #ececec;
+				.media {
+					float: left;
+
+					.handle {
+						background: #ececec;
+						background-image: url('../img/ui/handle.png');
+						background-position: center;
+						background-repeat: no-repeat;
+						border: solid 1px #ccc;
+						cursor: move;
+						display: inline-block;
+						left: -1px;
+						height: 158px;
+						position: absolute;
+						top: 21px;
+						width: 19px;
+					}
+					.delete {
+						.border-radius(0);
+						border-color: #ccc;
+						left: 4px;
+						margin: 0;
+						position: absolute;
+						top: 4px;
+					}
+					.illo {
+						background-image: url('../img/_fpo/video.png');
+						background-size: cover;
+						height: 112px;
+						position: relative;
+						width: 200px;
+						margin-left: 5px;
+
+						figcaption {
+							background: #333;
+							bottom: -20px;
+							color: #fff;
+							font-size: .75em;
+							position: absolute;
+							width: 100%;
+						}
+					}
+				}
+				.meta {
+					color: #666;
+					float: left;
+					font-size: 0.75rem;
+					margin-left: 5px;
+					width: 150px;
+			/* Large desktop */
+			@media (min-width: 1200px) {
+				width: 250px;
+			}
+
+					a {
+						font-size: 1rem;
+					}
+				}
+			}
+			.tools {
+				min-height: 40px;
+			}
+		}
+		.notes {
+			font-size: 0.75em;
+			float: left;
+			width:  35%;
+			/* Portrait tablet to landscape and desktop */
+			@media (min-width: 768px) and (max-width: 979px) {
+				.clearFloat;
+			}
+			/* Landscape phone to portrait tablet */
+			@media (max-width: 767px) {
+				.clearFloat;
+			}
+ 			/* Landscape phones and down */
+			@media (max-width: 480px) {
+				.clearFloat;
+			}
+			//background: tan;
+			//min-height: 180px;
+
+			h2, p {
+				padding: 0 10px;
+			}
+
+			p {
+				border-left: solid 1px #ececec;
+			}
+
+			h2 {
+				background-color: #e0e0e0;
+				color: #666;
+				font-size: inherit;
+				line-height: 30px;
+				margin: 0;
+			}
+		}
+	}
+}
+
+section.favorites, section.filters {
+	background-color: #fff;
+	border: solid 1px @standard-border-color;
+	margin: 16px 0;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	h1, h2, h3 {
+		font-weight: normal;
+		line-height: @item-line-height;
+		margin: 0;
+	}
+
+	h1 {
+		font-size: 1.143rem;
+		border-bottom: solid 1px @item-border-color;
+	}
+	h2, h3 {
+		font-size: 1rem;
+	}
+
+	h1, header > a, h2, li {
+		padding-left: 15px;
+	}
+
+	header {
+		h1 {
+			color: @steelblue;
+		}
+		h2 {
+			background-color: @item-highlight-color;
+			border-bottom: solid 1px @item-border-color;
+		}
+		a {
+			color: @item-link-color;
+		}
+	}
+
+	& > h2 {
+		background-color: lighten(@item-border-color, 3%);
+		font-weight: bold;
+		line-height: @item-line-height * 0.9;
+	}
+
+	ul {
+		.clearfix();
+		list-style: none;
+
+		&.folders {
+			li {
+				border-top: solid 1px @item-border-color;
+				color: @item-link-color;
+				line-height: @item-line-height * 0.705;//~31px
+				position: relative;
+			}
+		}
+
+		&.controls {
+			.mini-grid(2, 149px);
+
+			li {
+				.mini-col();
+				border-top: solid 1px @item-border-color;
+				line-height: 2.571em;
+				padding: 0;
+
+				a {
+					background: @lightestgray;
+					display: block;
+
+					&:hover {
+						color: @link-color;
+						text-decoration: none;
+					}
+				}
+
+				a.selected {
+					background-color: @link-color;
+					color: #fff;
+
+					&:hover {
+						color: #fff;
+					}
+				}
+
+				.ico-plus {
+					.ico-plus-white;
+					height: 18px;
+					margin: 4px 0 0 14px;
+					position: relative;
+					top: 4px;
+					width: 18px;
+				}
+
+				.ico-folder {
+					.ico-folder-lightblue;
+					height: 20px;
+					margin: 2px 4px 0 16px;
+					position: relative;
+					top: 4px;
+					width: 20px;
+				}
+
+				.ico-arrow {
+					.ico-arrow-line-lightblue;
+					height: 18px;
+					margin: 4px 0 0 7px;
+					position: relative;
+					top: 4px;
+					width: 18px;
+				}
+
+				/* Portrait tablet to landscape and desktop */
+				@media (min-width: 768px) and (max-width: 979px) {
+					font-size: 8px;
+				}
+
+			}
+		}
+	}
+}
+
+section.filters {
+	h2 {
+		padding-left: 0;
+	}
+	a {
+		color: @darkgray;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	& > ul {
+		& > li {
+			background: lighten(@background-color, 5%);
+			border-top: solid 1px @item-border-color;
+			line-height: 2em;
+
+			&:first-child {
+				border-top: none;
+			}
+		}
+	}
+	.arrow {
+		.ico-arrow-darkgray;
+		.rotate(90deg);
+		background-size: cover;
+		display: inline-block;
+		height: 12px;
+		margin-right: 2px;
+		width: 12px;
+	}
+	.collapsed {
+		.arrow {
+			.rotate(0deg);
+		}
+	}
+}

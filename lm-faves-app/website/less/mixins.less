@@ -1,8 +1,7 @@
-// mixins
 .border-radius (@radius) {
-  -webkit-border-radius: @radius;
-  -moz-border-radius: @radius;
-  border-radius: @radius;
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
 }
 .box-shadow (@arg){
     -moz-box-shadow: @arg;
@@ -10,15 +9,17 @@
     box-shadow: @arg;
 }
 .data-uri (@mimetype, @encoded-image) {
-  background-image: url('data:@{mimetype};base64,@{encoded-image}');
+    background-image: url('data:@{mimetype};base64,@{encoded-image}');
+    background-size: cover;
+    display: inline-block;
 }
 .rotate (@deg) {
-  -webkit-transform: rotate(@deg);
-  -moz-transform: rotate(@deg);
-  -ms-transform: rotate(@deg);
-  -o-transform: rotate(@deg);
+    -webkit-transform: rotate(@deg);
+    -moz-transform: rotate(@deg);
+    -ms-transform: rotate(@deg);
+    -o-transform: rotate(@deg);
 }
 .clearFloat {
-  float: none;
-  width: 100%;
+    float: none;
+    width: 100%;
 }

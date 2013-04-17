@@ -24,125 +24,145 @@
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
+        <header>
+            <h1>PBS Learning Media</h1>
+            <div class="banner">
+                <figure>
+                </figure>
+            </div>
+            <nav>
+                <div class="search">
+                    <form id="main_search" action="/search/" method="get">
+                        <input type="text" placeholder="Full text search" name="q" />
+                        <button aria-label="Search">
+                            <i class="icon-search icon-white"></i>
+                        </button>
+                    </form>
+                </div>
+                <ul>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <i class="icon">?</i> Help
+                        </a>
+                    </li>
+                    <li>
+                        <button aria-label="Login">
+                            Login
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </header>
 
         <div class="wrapper">
-
-            <header>
-                <div class="banner">
-                    <figure>
-                    </figure>
-                </div>
-                <nav>
-                    <div class="search">
-                        <form id="main_search" action="/search/" method="get">
-                            <input type="text" placeholder="Full text search" name="q" />
-                            <button>
-                                <i class="icon-white icon-search"></i>
-                            </button>
-                        </form>
-                    </div>
-                    <ul>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <i class="icon">?</i> Help
-                            </a>
-                        </li>
-                        <li>
-                            <button>
-                                Login
-                            </button>
-                        </li>
-                    </ul>
-                </nav>
-            </header>
-
             <div class="main">
+
                 <aside>
-                    <section class="folders">
+                    <section class="favorites">
                         <header>
-                            <h2>Folders</h2>
+                            <h1>My Favorites</h1>
+                            <h2>
+                                <a href="#replaceme">
+                                    All Favorites <span>(8)</span>
+                                </a>
+                            </h2>
                         </header>
-                        <div class="accordion">
-                            <h3>Astronomy <span>(6)</span></h3>
-                            <div>
-                                <ul>
-                                    <li>
-                                        Lorem Ipsum Dolor
-                                    </li>
-                                    <li>
-                                        Lorem Ipsum Dolor
-                                    </li>
-                                    <li>
-                                        Lorem Ipsum Dolor
-                                    </li>
-                                    <li>
-                                        Lorem Ipsum Dolor
-                                    </li>
-                                    <li>
-                                        Lorem Ipsum Dolor
-                                    </li>
-                                    <li>
-                                        Lorem Ipsum Dolor
-                                    </li>
-                                </ul>
-                            </div>
-                            <h3>Biology <span>(2)</span></h3>
-                            <div>
-                                <ul>
-                                    <li>
-                                        Lorem Ipsum Dolor
-                                    </li>
-                                    <li>
-                                        Lorem Ipsum Dolor
-                                    </li>
-                                    <li>
-                                        Lorem Ipsum Dolor
-                                    </li>
-                                </ul>
-                            </div>
-                            <h3>Geography <span>(4)</span></h3>
-                            <div>
-                                <ul>
-                                    <li>
-                                        Lorem Ipsum Dolor
-                                    </li>
-                                    <li>
-                                        Lorem Ipsum Dolor
-                                    </li>
-                                    <li>
-                                        Lorem Ipsum Dolor
-                                    </li>
-                                    <li>
-                                        Lorem Ipsum Dolor
-                                    </li>
-                                </ul>
-                            </div>
-                            <h3>Mathmatics <span>(2)</span></h3>
-                            <div>
-                                <ul>
-                                    <li>
-                                        Lorem Ipsum Dolor
-                                    </li>
-                                    <li>
-                                        Lorem Ipsum Dolor
-                                    </li>
-                                </ul>
-                            </div>
-                            <h3>Social Studies <span>(2)</span></h3>
-                            <div>
-                                <ul>
-                                    <li>
-                                        Lorem Ipsum Dolor
-                                    </li>
-                                    <li>
-                                        Lorem Ipsum Dolor
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                        <h2>Folders</h2>
+                        <ul class="folders">
+                            <li>
+                                Biology (0)
+                            </li>
+                            <li>
+                                Evolution and Diversity (0)
+                            </li>
+                            <li>
+                                Test Prep (0)
+                            </li>
+                        </ul>
+                        <ul class="controls">
+                            <li class="new-folder">
+                                <a href="#replaceme" class="selected">
+                                    <i class="ico-plus"></i>
+                                    Add New Folder
+                                </a>
+                            </li>
+                            <li class="manage-folders">
+                                <a href="#replaceme">
+                                    <i class="ico-folder"></i>
+                                    Manage Folders
+                                    <i class="ico-arrow"></i>
+                                </a>
+                            </li>
+                        </ul>
                     </section>
+
+                    <section class="filters">
+                        <header>
+                            <h1>Filter Favorites</h1>
+                        </header>
+                        <ul>
+                            <li>
+                                <h2>
+                                    <a class="collapsed" data-toggle="collapse" data-target="#media-type" href="#replaceme">
+                                        <i class="arrow"></i>
+                                        Media Type
+                                    </a>
+                                </h2>
+                                <ul id="media-type" class="collapse">
+                                    <li>
+                                        Audio
+                                    </li>
+                                    <li>
+                                        Interactive
+                                    </li>
+                                    <li>
+                                        Self-Paced Lesson
+                                    </li>
+                                    <li>
+                                        Video
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h2>
+                                    <a class="collapsed" data-toggle="collapse" data-target="" href="#replaceme">
+                                        <i class="arrow"></i>
+                                        Resource Type
+                                    </a>
+                                </h2>
+                            </li>
+                            <li>
+                                <h2>
+                                    <a class="collapsed" data-toggle="collapse" data-target="" href="#replaceme">
+                                        <i class="arrow"></i>
+                                        Language
+                                    </a>
+                                </h2>
+                            </li>
+                        </ul>
+                    </section>
+
                 </aside>
-                <article>
+
+                <article class="listing">
+                    <ul class="controls">
+                        <h2>
+                            All Favorites
+                        </h2>
+                        <a href="#replaceme">
+                            <i class="ico-plus"></i>
+                            Add to Folders
+                        </a>
+                        <a href="#replaceme">
+                            <i class="ico-delete"></i>
+                            Delete Resource
+                        </a>
+                        <a href="#replaceme">
+                            <i class="ico-link"></i>
+                            Add a Link
+                        </a>
+                    </ul>
+
                     <ul id="favorites" class="favorites">
                         <li>
                             <div class="detail">
@@ -164,122 +184,7 @@
                                     </p>
                                 </div>
                                 <div class="tools">
-                                </div>
-                            </div>
-                            <div class="notes">
-                                <h2>Notes</h2>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at nulla eget nibh dignissim sagittis non at libero. Nulla aliquet neque at purus bibendum varius. Cras vitae ante vitae arcu pharetra sodales. Duis ligula massa, tristique ut venenatis at posuere.
-                                </p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="detail">
-                                <div class="data">
-                                    <div class="media">
-                                        <input type="checkbox" class="delete" />
-                                        <span class="handle"></span>
-                                        <figure class="illo">
-                                            <figcaption>
-                                                Video
-                                            </figcaption>
-                                        </figure>
-                                    </div>
-                                    <p class="meta">
-                                        <a>2. Lorep Ipsum Dolor</a><br />
-                                        <strong>Grades: </strong> 5-10+<br />
-                                        <strong>From: </strong> WGBH Educational Productions<br />
-                                        <strong>Date Saved: </strong> 10/23/2013<br />
-                                    </p>
-                                </div>
-                                <div class="tools">
-                                </div>
-                            </div>
-                            <div class="notes">
-                                <h2>Notes</h2>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at nulla eget nibh dignissim sagittis non at libero. Nulla aliquet neque at purus bibendum varius. Cras vitae ante vitae arcu pharetra sodales. Duis ligula massa, tristique ut venenatis at posuere.
-                                </p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="detail">
-                                <div class="data">
-                                    <div class="media">
-                                        <input type="checkbox" class="delete" />
-                                        <span class="handle"></span>
-                                        <figure class="illo">
-                                            <figcaption>
-                                                Video
-                                            </figcaption>
-                                        </figure>
-                                    </div>
-                                    <p class="meta">
-                                        <a>3. Lorep Ipsum Dolor</a><br />
-                                        <strong>Grades: </strong> 5-10+<br />
-                                        <strong>From: </strong> WGBH Educational Productions<br />
-                                        <strong>Date Saved: </strong> 10/23/2013<br />
-                                    </p>
-                                </div>
-                                <div class="tools">
-                                </div>
-                            </div>
-                            <div class="notes">
-                                <h2>Notes</h2>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at nulla eget nibh dignissim sagittis non at libero. Nulla aliquet neque at purus bibendum varius. Cras vitae ante vitae arcu pharetra sodales. Duis ligula massa, tristique ut venenatis at posuere.
-                                </p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="detail">
-                                <div class="data">
-                                    <div class="media">
-                                        <input type="checkbox" class="delete" />
-                                        <span class="handle"></span>
-                                        <figure class="illo">
-                                            <figcaption>
-                                                Video
-                                            </figcaption>
-                                        </figure>
-                                    </div>
-                                    <p class="meta">
-                                        <a>4. Lorep Ipsum Dolor</a><br />
-                                        <strong>Grades: </strong> 5-10+<br />
-                                        <strong>From: </strong> WGBH Educational Productions<br />
-                                        <strong>Date Saved: </strong> 10/23/2013<br />
-                                    </p>
-                                </div>
-                                <div class="tools">
-                                </div>
-                            </div>
-                            <div class="notes">
-                                <h2>Notes</h2>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at nulla eget nibh dignissim sagittis non at libero. Nulla aliquet neque at purus bibendum varius. Cras vitae ante vitae arcu pharetra sodales. Duis ligula massa, tristique ut venenatis at posuere.
-                                </p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="detail">
-                                <div class="data">
-                                    <div class="media">
-                                        <input type="checkbox" class="delete" />
-                                        <span class="handle"></span>
-                                        <figure class="illo">
-                                            <figcaption>
-                                                Video
-                                            </figcaption>
-                                        </figure>
-                                    </div>
-                                    <p class="meta">
-                                        <a>5. Lorep Ipsum Dolor</a><br />
-                                        <strong>Grades: </strong> 5-10+<br />
-                                        <strong>From: </strong> WGBH Educational Productions<br />
-                                        <strong>Date Saved: </strong> 10/23/2013<br />
-                                    </p>
-                                </div>
-                                <div class="tools">
+
                                 </div>
                             </div>
                             <div class="notes">
@@ -291,30 +196,25 @@
                         </li>
                     </ul>
                 </article>
+
             </div>
-
-            <footer>
-                <div>
-                    <img src="http://d43fweuh3sg51.cloudfront.net/static/station_site/img/pbslm_small_logo_white.png" />
-                     &copy; 2013 PBS &amp; WGBH Educational Foundation. All rights reserved.
-                 </div>
-            </footer>
-
         </div>
 
+        <footer>
+            <div>
+                <img src="http://d43fweuh3sg51.cloudfront.net/static/station_site/img/pbslm_small_logo_white.png" alt="PBS Learning Media" />
+                 &copy; 2013 PBS &amp; WGBH Educational Foundation. All rights reserved.
+             </div>
+        </footer>
 
-    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+
+
+    <script src="http://code.jquery.com/jquery-1.7.1.js"></script>
     <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
 
     <script>
-        $('.accordion').accordion({
-            collapsible: true,
-            heightStyle: "content",
-            icons: {
-                "header": "ui-icon-plus",
-                "activeHeader": "ui-icon-minus"
-            }
-        });
+
 
         $( "#favorites" ).sortable({
             //axis: 'y',

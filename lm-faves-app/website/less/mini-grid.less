@@ -1,0 +1,81 @@
+// TODO: add gutters
+//
+// NOTE: Uses Bootstrap vars to determine widths. Right now, gutter space is
+// distributed into the column widths. This isn't intended for fancy layouts,
+// just an easier way to handle floats where the item width doesn't conform to
+// the overall scaffolding grid.
+
+.mini-grid (@total-columns, @column-width) {
+	// default
+	@mini-row-width: @total-columns * @column-width;
+
+	// 1200px
+	@adjusted-column-width-1200: floor(@gridGutterWidth1200 / @gridColumns) *
+		(@gridColumns - 1) + @gridColumnWidth1200;
+	@grid-width-ratio-1200: round(@gridRowWidth1200 / @gridRowWidth, 2);
+	@column-width-1200: floor(@column-width * @grid-width-ratio-1200);
+	@mini-row-width-1200: @column-width-1200 * @total-columns;
+
+	// 768px - 979px
+	@adjusted-column-width-768: floor(@gridGutterWidth768 / @gridColumns) *
+		(@gridColumns - 1) + @gridColumnWidth768;
+	@grid-width-ratio-768: round(@gridRowWidth768 / @gridRowWidth, 4);
+
+	@column-width-768: floor(@column-width * @grid-width-ratio-768) - 1; //TODO: Is this -1 really necessary? May want to dbl-check the math
+	@mini-row-width-768: @column-width-768 * @total-columns;
+
+
+	li:before {
+		//content: '@{grid-width-ratio-768}';
+	}
+
+	.clearfix();
+	margin-right: auto;
+	margin-left: auto;
+	width: @mini-row-width;
+
+	/* Large desktop */
+	@media (min-width: 1200px) {
+		width: @mini-row-width-1200;
+	}
+	/* Portrait tablet to landscape and desktop */
+	@media (min-width: 768px) and (max-width: 979px) {
+		width: @mini-row-width-768;
+	}
+	/* Landscape phone to portrait tablet */
+	@media (max-width: 767px) {
+		width: auto;
+	}
+	/* Landscape phones and down */
+	@media (max-width: 480px) {
+		width: auto;
+	}
+
+	.mini-col(@columns: 1, @offset: 0) {
+		float: left;
+		margin-left: (@column-width * @offset);
+		width: (@column-width * @columns);
+
+		/* Large desktop */
+		@media (min-width: 1200px) {
+			margin-left: @column-width-1200 * @offset;
+			width: @column-width-1200 * @columns;
+		}
+		/* Portrait tablet to landscape and desktop */
+		@media (min-width: 768px) and (max-width: 979px) {
+			margin-left: @column-width-768 * @offset;
+			width: @column-width-768 * @columns;
+		}
+		/* Landscape phone to portrait tablet */
+		@media (max-width: 767px) {
+			margin-left: 0;
+			width: 100%;
+		}
+		/* Landscape phones and down */
+		@media (max-width: 480px) {
+			margin-left: 0;
+			width: 100%;
+		}
+	}
+}
+

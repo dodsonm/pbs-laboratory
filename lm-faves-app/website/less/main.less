@@ -7,196 +7,59 @@
 @import 'colors.less';
 @import 'variables.less';
 @import 'mixins.less';
+//@import 'collapse-ext.less';
 @import 'button-ext.less';
 @import 'reset-plus.less';
 @import 'responsive-grid.less';
-@import 'ui.less';
+@import 'mini-grid.less';
+@import 'images.less';
+//@import 'ui.less';
 @import 'global.less';
 
 //page-specific
 @import 'faves.less';
 
-//MOVE INTO FAVES.LESS
-body {
-	background-color: #ececec;
-}
 
-ul.favorites {
-	list-style: none;
-	width: 100%;
 
-	li {
-		.clearfix();
-		background: #fff;
-		position: relative;
-		margin-top: 10px;
-		margin-bottom: 10px;
+.listing {
+	.controls {
+		background-color: #fff;
+		margin-bottom: 15px;
 
-		&:first-child {
-			margin-top: 0;
-		};
+		h2 {
+			border-bottom-color: @standard-border-color;
+			color: @steelblue;
+			font-size: 1.143rem;
+			font-weight: normal;
+			line-height: 1em;
+			padding-left: 15px;
 
-		.detail {
-min-height: 180px;
-//background: beige;
-			float: left;
-			width: 65%;
-
-			/* Portrait tablet to landscape and desktop */
-			@media (min-width: 768px) and (max-width: 979px) {
-				.clearFloat;
-			}
-			/* Landscape phone to portrait tablet */
-			@media (max-width: 767px) {
-				.clearFloat;
-			}
-			/* Landscape phones and down */
-			@media (max-width: 480px) {
-				.clearFloat;
-			}
-
-			.data {
-				.clearfix();
-				padding-bottom: 10px;
-				margin-top: 10px;
-				padding-left: 20px;
-				border-bottom: solid 1px #ececec;
-				.media {
-					float: left;
-
-					.handle {
-						background: #ececec;
-						background-image: url('../img/ui/handle.png');
-						background-position: center;
-						background-repeat: no-repeat;
-						border: solid 1px #ccc;
-						cursor: move;
-						display: inline-block;
-						left: -1px;
-						height: 158px;
-						position: absolute;
-						top: 21px;
-						width: 19px;
-					}
-					.delete {
-						.border-radius(0);
-						border-color: #ccc;
-						left: 4px;
-						margin: 0;
-						position: absolute;
-						top: 4px;
-					}
-					.illo {
-						background-image: url('../img/_fpo/video.png');
-						background-size: cover;
-						height: 112px;
-						position: relative;
-						width: 200px;
-						margin-left: 5px;
-
-						figcaption {
-							background: #333;
-							bottom: -20px;
-							color: #fff;
-							font-size: .75em;
-							position: absolute;
-							width: 100%;
-						}
-					}
-				}
-				.meta {
-					color: #666;
-					float: left;
-					font-size: 0.75rem;
-					margin-left: 5px;
-					width: 150px;
-/* Large desktop */
-@media (min-width: 1200px) {
-	width: 250px;
-}
-
-					a {
-						font-size: 1rem;
-					}
-				}
-			}
-			.tools {
-				min-height: 40px;
-			}
 		}
-		.notes {
-			font-size: 0.75em;
-			float: left;
-			width:  35%;
-			/* Portrait tablet to landscape and desktop */
-			@media (min-width: 768px) and (max-width: 979px) {
-				.clearFloat;
-			}
-			/* Landscape phone to portrait tablet */
-			@media (max-width: 767px) {
-				.clearFloat;
-			}
- 			/* Landscape phones and down */
-			@media (max-width: 480px) {
-				.clearFloat;
-			}
-//background: tan;
-//min-height: 180px;
 
-			h2, p {
-				padding: 0 10px;
-			}
-
-			p {
-				border-left: solid 1px #ececec;
-			}
-
-			h2 {
-				background-color: #e0e0e0;
-				color: #666;
-				font-size: inherit;
-				line-height: 30px;
-				margin: 0;
-			}
+		a {
+			border: solid 1px @standard-border-color;
+			display: inline-block;
+			height: 22px;
 		}
+
+		.ico-plus {
+			.ico-plus-lightblue;
+			height: 20px;
+			width: 20px;
+		}
+		.ico-delete {
+			.ico-trash-lightblue;
+			height: 20px;
+			width: 20px;
+		}
+		.ico-link {
+			.ico-link-lightblue;
+			height: 20px;
+			width: 20px;
+		}
+
 	}
 }
 
-.accordion {
-	margin-bottom: -1px;
-	h3 {
-		//border-bottom: solid 1px #ccc;
-		border-top: solid 1px #ececec;
-		color: @orange;
-		cursor: pointer;
-		font-size: 1em;
-		font-weight: normal;
-		line-height: 2em;
-		margin: 0;
-		outline: none;
-		//position: relative;
-		//top: -1px;
 
-		span {
-			color: #666;
-			font-size: 0.8em;
-		}
 
-		&:first-child {
-			//top: 0px;
-		};
-
-		& + div {
-			background-color: #fafafa;
-			border-top: solid 1px #ececec;
-
-		}
-	}
-
-	ul {
-		padding: 0.5em;
-		li {
-			font-size: 0.9em;
-		}
-	}
-}

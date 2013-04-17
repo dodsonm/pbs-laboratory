@@ -1,116 +1,109 @@
+html {
+	font-size: 14px;
+}
+
+body {
+	background-color: @background-color;
+}
+
+
 .wrapper {
-	.box-shadow(1px 0 25px 0px rgba(125, 125, 125, .5));
+	//.box-shadow(1px 0 25px 0px rgba(125, 125, 125, .5));
 	.responsive-wrapper-fixed();
+	padding-top: 36px;
+}
 
-	background-color: #ececec;
+// skeleton
+body > header {
+	background-color: @header-bgcolor;
 
-	header {
-		background-color: @header-bgcolor;
+	h1 {
+		color: transparent;
+		position: absolute;
+		top: -100px;
+	}
 
-		.banner {
-			figure {
-				background-image: @banner-image;
-				background-position: center;
-				background-size: cover;
-				padding-top: @banner-image-ratio;
-			}
-		}
-
-		nav {
-			.clearfix();
-			background-color: @nav-bgcolor;
-			color: white;
-			padding: 10px 0;
-
-			.search {
-				float: left;
-				margin: 0 15px;
-				width: 400px;
-
-				button {
-					i {
-						.icon-white;
-						.icon-search;
-					}
-				}
-
-			}
-
-			ul {
-				float: right;
-				margin: 0;
-				padding: 0;
-
-				/* Landscape phones and down */
-				@media (max-width: 767px) {
-					display: none;
-				}
-
-				li {
-					float: left;
-					margin: 0 15px;
-
-					a, button {
-						color: @nav-linkcolor;
-						font-weight: bold;
-					}
-
-					a {
-						display: inline-block;
-						padding-top: 5px;
-					}
-				}
-			}
+	.banner {
+		.responsive-wrapper-fixed();
+		figure {
+			background-image: @banner-image;
+			background-position: center;
+			background-size: cover;
+			padding-top: @banner-image-ratio;
 		}
 	}
 
-	.main {
-		.makeRow();
-		padding-bottom: 5px;
-		padding-top: 5px;
+	nav {
+		.responsive-wrapper-fixed();
+		.clearfix();
+		background-color: @nav-bgcolor;
+		color: white;
+		padding: 10px 0;
 
-		article {
-			.makeColumn(8);
-			min-height: 300px;
-
+		.search {
+			float: left;
+			margin: 0 15px;
+			width: 400px;
 		}
-		aside {
-			.makeColumn(4);
 
-			section {
-				background: white;
-				border: solid 1px #ccc;
-				font-size: 14px;
+		ul {
+			float: right;
+			margin: 0;
+			padding: 0;
 
-				h2, h3, li {
-					padding: 0 10px;
-				}
-
-				h2 {
-					background: #ececec;
-					color: #666;
-					font-size: 0.9em;
-					line-height: 2em;
-					margin: 0;
-				}
-
-			}
-			/* Landscape phone to portrait tablet */
+			/* Landscape phones and down */
 			@media (max-width: 767px) {
 				display: none;
 			}
-			/* Landscape phones and down */
-			@media (max-width: 480px) {
-				display: none;
+
+			li {
+				float: left;
+				margin: 0 15px;
+
+				a, button {
+					color: @nav-linkcolor;
+					font-weight: bold;
+				}
+
+				a {
+					display: inline-block;
+					padding-top: 5px;
+				}
 			}
 		}
 	}
+}
 
-	footer {
-		background-color: @footer-bgcolor;
-		color: @footer-textcolor;
-		font-size: 0.8em;
-		padding: 20px 15px;
+.main {
+	.makeRow();
+
+	article {
+		.makeColumn(8);
+		min-height: 300px;
+
 	}
+	aside {
+		.makeColumn(4);
 
+		/* Landscape phone to portrait tablet */
+		@media (max-width: 767px) {
+			display: none;
+		}
+		/* Landscape phones and down */
+		@media (max-width: 480px) {
+			display: none;
+		}
+	}
+}
+
+button[name="submit"] {
+	color: transparent;
+	position: absolute;
+}
+
+footer {
+	background-color: @footer-bgcolor;
+	color: @footer-textcolor;
+	font-size: 0.8em;
+	padding: 20px 15px;
 }
